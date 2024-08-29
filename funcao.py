@@ -2,18 +2,18 @@ import time
 import random
 
 def gerar_lista():
-    return [random.randint(0, 1000) for _ in range(10000)]
+    return [random.randint(0, 1000) for _ in range(1000)]
 
 def bubble_sort(L):
 
-    troca_count = 0  # Contador para a quantidade de trocas
+    count = 0  
 
-    start_time = time.time()  # Início da medição do tempo
+    start_time = time.time()  
 
     n = len(L)
-    for j in range(1, n):
-        for i in range(0,n - 1):
-            troca_count += 1  # Incrementa o contador de trocas
+    for j in range(n):
+        for i in range(n - 1):
+            count += 1  
             if L[i] > L[i + 1]:
                 # Troca os elementos de posição
                 t = L[i]
@@ -24,7 +24,7 @@ def bubble_sort(L):
     end_time = time.time()  # Fim da medição do tempo
     tempo_execucao = end_time - start_time  # Tempo total de execução
 
-    return L, tempo_execucao, troca_count
+    return L, tempo_execucao, count
 
 
 
